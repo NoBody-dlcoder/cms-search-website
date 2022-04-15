@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { BrowserRouter, useRoutes } from 'react-router-dom'
 import routes from './router';
 import { Provider } from 'react-redux'
@@ -7,11 +8,12 @@ function App() {
 
   const GetRoutes = (() => useRoutes(routes))
   const SetRoutes = (() => <BrowserRouter><GetRoutes /></BrowserRouter>)
+
   return (
     <Provider store={store}>
-      <div className="App">
+      <Fragment>
         <SetRoutes />
-      </div>
+      </Fragment>
     </Provider>
   );
 }
