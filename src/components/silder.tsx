@@ -13,23 +13,22 @@ export default memo(function HYMine() {
   const [collapsed, setCollapsed] = useState(false)
 
   const toggleCollapsed = () => {
-    console.log(collapsed);
     setCollapsed(!collapsed);
   };
 
   return (
     <SliderWrapper>
-      <div className={`${collapsed ? 'container' : ''}`}>
-        <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
+      <div className={`${collapsed ? 'null' : 'maxContainer'}`} >
+        <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }} >
           {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
         </Button>
         <Menu
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
           mode="inline"
           inlineCollapsed={collapsed}
+          inlineIndent={13}
+          className={`${collapsed ? 'minContainer' : 'null'}`}
         >
-          <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
+          <SubMenu key="8" icon={<AppstoreOutlined />} title="ceshi">
             <Menu.Item key="9">Option 9</Menu.Item>
             <Menu.Item key="10">Option 10</Menu.Item>
             <SubMenu key="sub3" title="Submenu">
@@ -39,7 +38,7 @@ export default memo(function HYMine() {
           </SubMenu>
         </Menu>
       </div>
-    </SliderWrapper>
+    </SliderWrapper >
   )
 })
 
